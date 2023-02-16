@@ -1,36 +1,25 @@
 #include <stdio.h>
-int main () 
-{ 
-int x,y,i,j;
-int m[20][20];
 
-do{
-printf(" donner moi les facteurs a multiplier  x et y  : ");
-scanf("%d %d",&x,&y);
-y=y+1;	
-} while ((x<0) &&  (y<0));
-printf(" x*y |");
-printf(" \t -----------------------");
-printf("\n");
+int main() {
+    int x, y, i, j;
+    int m[10][10];
 
-	for (i=1;i<=x;i++){
-	for (j=1;j<=y;j++)
-	{
-	m[i][j]=i*j;	
-	}	
-}
-for ( i=1;i<=x;i++)
-{
-for (j=1;j<y;j++){
+    do {
+        printf("Donnez-moi les facteurs à multiplier x et y : ");
+        scanf("%d %d", &x, &y);
+    } while (x < 0 || y < 0);
 
-	printf("%d",m[i][j])    ;
-if (j<y-1){
-printf("\t",":","\n");	
-}
-else  {
-printf(" \n ");	
-}
-}
-}
-return 0 ;	
+    printf("x * y |");
+    printf("\t------------------------------------------------------------------------------------------\n");
+
+    for (i = 1; i <= x; i++) {
+        printf("%d \t|", i);
+        for (j = 1; j <= y; j++) {
+            m[i][j] = i * j;
+            printf("\t%d", m[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
 }
